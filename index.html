@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">Alessandro Tanino — IT Infrastructure &amp; Automation</title>
+  <meta name="description" data-i18n="meta.desc" content="Personal website of Alessandro Tanino: IT projects, automation tools and YouTube channel. SQL Server, PKI, SSL/TLS." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e17'/%3E%3Cpath d='M20 18v28M20 18h14a10 10 0 0 1 0 20H20' stroke='%2322d3ee' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='46' cy='46' r='5' fill='%238b5cf6'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">&lt;AT /&gt;</span>
+        <span class="brand-name">Alessandro&nbsp;Tanino</span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="#progetti" data-i18n="nav.projects">Projects</a>
+        <a href="#chi-sono" data-i18n="nav.about">About</a>
+        <a href="#youtube">YouTube</a>
+        <a href="#contatti" class="nav-cta" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <button id="langToggle" class="lang-toggle" aria-label="Switch language" title="Cambia lingua / Switch language">—</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="hero-greeting" data-i18n="hero.hello">Hi, my name is</p>
+          <h1 class="hero-title">Alessandro Tanino<span class="cursor">_</span></h1>
+          <p class="hero-subtitle">
+            <span id="typed" aria-live="polite"></span>
+          </p>
+          <p class="hero-desc" data-i18n-html="hero.desc">
+            I design and automate enterprise IT infrastructure: Always On
+            databases, PKI and SSL/TLS security. I turn manual processes into
+            reliable, automated, self-service tools.
+          </p>
+          <div class="hero-actions">
+            <a href="#progetti" class="btn btn-primary" data-i18n="hero.projectsBtn">See projects</a>
+            <a href="https://github.com/alessandrotanino-blip" target="_blank" rel="noopener" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+        <div class="terminal reveal" role="img" aria-label="Decorative terminal window">
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">powershell — alessandro@infra</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="ps">PS C:\&gt;</span> whoami</p>
+            <p class="out">alessandro.tanino</p>
+            <p><span class="ps">PS C:\&gt;</span> Get-Role -Primary</p>
+            <p class="out">Senior System Engineer</p>
+            <p><span class="ps">PS C:\&gt;</span> Get-Skill -Top</p>
+            <p class="out">SQL Server &nbsp;|&nbsp; PKI / AD CS &nbsp;|&nbsp; PowerShell &nbsp;|&nbsp; IIS</p>
+            <p><span class="ps">PS C:\&gt;</span> Start-Automation <span class="flag">-Verbose</span><span class="cursor">_</span></p>
+          </div>
+        </div>
+      </div>
+      <a href="#progetti" class="scroll-hint" aria-label="Scroll to projects">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+      </a>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="progetti">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-tag" data-i18n="sec.projects.tag">// projects</p>
+          <h2 class="section-title" data-i18n="sec.projects.title">Things I've built</h2>
+          <p class="section-sub" data-i18n="sec.projects.sub">
+            Tools and portals born from real enterprise problems:
+            automation, security and self-service.
+          </p>
+        </div>
+
+        <div class="project-tabs" role="tablist" aria-label="Projects">
+          <button class="project-tab" id="tab-pki" data-tab="pki" role="tab" aria-selected="true" aria-controls="panel-pki">PKI Portal</button>
+          <button class="project-tab" id="tab-ssl" data-tab="ssl" role="tab" aria-selected="false" aria-controls="panel-ssl">SSL Scanner</button>
+          <button class="project-tab" id="tab-sql" data-tab="sql" role="tab" aria-selected="false" aria-controls="panel-sql">SQL Server</button>
+          <button class="project-tab" id="tab-hyp" data-tab="hyp" role="tab" aria-selected="false" aria-controls="panel-hyp">HyperVisor Portal</button>
+        </div>
+        <div class="project-panels">
+          <!-- SQL Server Provisioning Portal -->
+          <article class="project-panel" id="panel-sql" role="tabpanel" aria-labelledby="tab-sql" hidden>
+            <div class="project-head">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 2C7.58 2 4 3.79 4 6v12c0 2.21 3.58 4 8 4s8-1.79 8-4V6c0-2.21-3.58-4-8-4Zm0 2c3.87 0 6 1.5 6 2s-2.13 2-6 2-6-1.5-6-2 2.13-2 6-2Zm6 12c0 .5-2.13 2-6 2s-6-1.5-6-2v-3.1c1.25.75 3.42 1.1 6 1.1s4.75-.35 6-1.1Zm0-5c0 .5-2.13 2-6 2s-6-1.5-6-2V8c1.25.75 3.42 1.1 6 1.1S16.75 8.75 18 8Z"/></svg>
+              </div>
+              <div class="project-head-text">
+                <h3 class="card-title">SQL Server Provisioning Portal</h3>
+                <span class="badge-coming" data-i18n="proj.sql.badge">COMING SOON</span>
+                <div class="card-tags">
+                  <span class="tag">SQL Server 2022</span>
+                  <span class="tag">Always On / CAG</span>
+                  <span class="tag">IIS</span>
+                  <span class="tag">PowerShell</span>
+                  <span class="tag">Active Directory</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <button class="like-btn" data-project="sql" aria-label="Like this project" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span class="like-count">0</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-col">
+                <p class="card-desc" data-i18n-html="proj.sql.desc">
+                  Enterprise self-service portal and orchestration engine for
+                  automatic database provisioning on
+                  <strong>SQL Server 2022 Contained Availability Groups</strong>.
+                  Users submit requests through a web portal on IIS, DBAs
+                  approve them with Windows SSO and a PowerShell engine runs
+                  the whole workflow end-to-end — creation/restore, backup, AG
+                  join and security — with zero manual work.
+                </p>
+                <ul class="card-features">
+                  <li data-i18n="proj.sql.f1">Self-service requests: new database or restore from .bak</li>
+                  <li data-i18n="proj.sql.f2">DBA approval dashboard with Windows SSO and AD group check</li>
+                  <li data-i18n="proj.sql.f3">Unattended PowerShell engine: create/restore, backup, AG join</li>
+                  <li data-i18n="proj.sql.f4">Contained AG security: credentials replicated on every node</li>
+                  <li data-i18n="proj.sql.f5">Auto-deploy script for Windows Server 2022/2025 + IIS</li>
+                </ul>
+              </div>
+              <div class="project-col">
+                <h4 class="details-title" data-i18n="proj.details.title">Key details</h4>
+                <ul class="card-details">
+                  <li data-i18n="proj.sql.d1">Targets: SQL Server 2022 Enterprise, Windows Server 2022/2025, IIS 10+</li>
+                  <li data-i18n="proj.sql.d2">Full recovery model + full and log backups to a network share</li>
+                  <li data-i18n="proj.sql.d3">Automatic replica synchronisation on the secondary node</li>
+                  <li data-i18n="proj.sql.d4">CAG: SQL logins and Windows accounts created in the AG catalog</li>
+                  <li data-i18n="proj.sql.d5">Email notification to the requester with connection parameters</li>
+                  <li data-i18n="proj.sql.d6">Real-time request status tracking in the DBA dashboard</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- PKI Web Enrollment Portal -->
+          <article class="project-panel" id="panel-pki" role="tabpanel" aria-labelledby="tab-pki">
+            <div class="project-head">
+              <div class="card-icon icon-violet" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4Zm-1.05 14.4-3.55-3.55 1.41-1.41 2.14 2.14 5.14-5.14 1.41 1.41-6.55 6.55Z"/></svg>
+              </div>
+              <div class="project-head-text">
+                <h3 class="card-title">PKI Web Enrollment Portal</h3>
+                <div class="card-tags">
+                  <span class="tag">.NET 8</span>
+                  <span class="tag">AD CS</span>
+                  <span class="tag">ACME / RFC 8555</span>
+                  <span class="tag">Web Crypto</span>
+                  <span class="tag">REST API</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a class="card-link" href="https://github.com/alessandrotanino-blip/PKIWebPortal" target="_blank" rel="noopener">
+                  <span data-i18n="proj.githubLink">Code on GitHub</span> <span aria-hidden="true">↗</span>
+                </a>
+                <button class="like-btn" data-project="pki" aria-label="Like this project" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span class="like-count">0</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-col">
+                <p class="card-desc" data-i18n-html="proj.pki.desc">
+                  Modern <strong>ASP.NET Core 8</strong> portal that replaces
+                  Microsoft's deprecated Web Enrollment (certsrv/ActiveX).
+                  Keys are generated directly in the browser, with native AD CS
+                  integration, approval workflows and a native
+                  <strong>ACME server (RFC 8555)</strong> for automatic renewals
+                  with win-acme, Certbot and Traefik.
+                </p>
+                <ul class="card-features">
+                  <li data-i18n="proj.pki.f1">Client-side key generation via Web Crypto (RSA / ECC)</li>
+                  <li data-i18n="proj.pki.f2">Private keys encrypted at rest (DPAPI + AES-256-GCM)</li>
+                  <li data-i18n="proj.pki.f3">Native ACME server (RFC 8555): win-acme, Certbot, Traefik</li>
+                  <li data-i18n="proj.pki.f4">Template RBAC via Active Directory groups</li>
+                  <li data-i18n="proj.pki.f5">Hold &amp; review approval workflow with admin notes</li>
+                  <li data-i18n="proj.pki.f6">7 languages, light/dark themes, REST API</li>
+                </ul>
+              </div>
+              <div class="project-col">
+                <h4 class="details-title" data-i18n="proj.details.title">Key details</h4>
+                <ul class="card-details">
+                  <li data-i18n="proj.pki.d1">Runs on Windows Server + IIS, alongside Microsoft AD CS</li>
+                  <li data-i18n="proj.pki.d2">Standalone mode (per forest) or multi-CA hub in the DMZ</li>
+                  <li data-i18n="proj.pki.d3">COM CCertRequest integration with certreq.exe fallback</li>
+                  <li data-i18n="proj.pki.d4">PKCS#12 (.pfx) package with user-chosen password</li>
+                  <li data-i18n="proj.pki.d5">Built-in simulator for development and offline environments</li>
+                  <li data-i18n="proj.pki.d6">Ownership check: certificates retrievable only by requester or admins</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- SSL Scanner -->
+          <article class="project-panel" id="panel-ssl" role="tabpanel" aria-labelledby="tab-ssl" hidden>
+            <div class="project-head">
+              <div class="card-icon icon-green" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5Zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14Z"/></svg>
+              </div>
+              <div class="project-head-text">
+                <h3 class="card-title">SSL/TLS Certificate Scanner</h3>
+                <div class="card-tags">
+                  <span class="tag">PowerShell</span>
+                  <span class="tag">SSL / TLS</span>
+                  <span class="tag">LDAPS</span>
+                  <span class="tag">Network Audit</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a class="card-link" href="https://github.com/alessandrotanino-blip/CertificateScanner" target="_blank" rel="noopener">
+                  <span data-i18n="proj.githubLink">Code on GitHub</span> <span aria-hidden="true">↗</span>
+                </a>
+                <button class="like-btn" data-project="ssl" aria-label="Like this project" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span class="like-count">0</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-col">
+                <p class="card-desc" data-i18n-html="proj.ssl.desc">
+                  <strong>PowerShell</strong> scanner for SSL/TLS certificate
+                  auditing across single hosts, file-based lists, or entire CIDR
+                  network ranges. Multi-threaded scanning with HTTPS and LDAPS
+                  support, OS fingerprinting, reverse DNS, expiration filtering
+                  and automated reports.
+                </p>
+                <ul class="card-features">
+                  <li data-i18n="proj.ssl.f1">Single site, bulk file and CIDR network range scans</li>
+                  <li data-i18n="proj.ssl.f2">HTTPS and LDAPS protocol support</li>
+                  <li data-i18n="proj.ssl.f3">OS fingerprinting and reverse DNS lookup</li>
+                  <li data-i18n="proj.ssl.f4">Expiration filtering for at-risk certificates</li>
+                  <li data-i18n="proj.ssl.f5">Multithreaded parallel processing</li>
+                  <li data-i18n="proj.ssl.f6">CSV export and automated email reports</li>
+                </ul>
+              </div>
+              <div class="project-col">
+                <h4 class="details-title" data-i18n="proj.details.title">Key details</h4>
+                <ul class="card-details">
+                  <li data-i18n="proj.ssl.d1">Windows PowerShell 5.1 or PowerShell 7+</li>
+                  <li data-i18n="proj.ssl.d2">Custom ports and legacy SSL protocol versions</li>
+                  <li data-i18n="proj.ssl.d3">Per-scan tuning: thread count and timeouts</li>
+                  <li data-i18n="proj.ssl.d4">Built-in -Help and -Examples documentation</li>
+                  <li data-i18n="proj.ssl.d5">Append mode for incremental CSV exports</li>
+                  <li data-i18n="proj.ssl.d6">Custom DNS servers for reverse lookups</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- HyperVisor Portal -->
+          <article class="project-panel" id="panel-hyp" role="tabpanel" aria-labelledby="tab-hyp" hidden>
+            <div class="project-head">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z"/></svg>
+              </div>
+              <div class="project-head-text">
+                <h3 class="card-title">HyperVisor Portal</h3>
+                <div class="card-tags">
+                  <span class="tag">PowerShell</span>
+                  <span class="tag">VMware vSphere</span>
+                  <span class="tag">Nutanix</span>
+                  <span class="tag">Proxmox VE</span>
+                  <span class="tag">IIS</span>
+                  <span class="tag">SQL Server</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <button class="like-btn" data-project="hypervisor" aria-label="Like this project" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                  <span class="like-count">0</span>
+                </button>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-col">
+                <p class="card-desc" data-i18n-html="proj.hyp.desc">
+                  Enterprise <strong>multi-hypervisor inventory &amp; reporting
+                  platform</strong> for VMware vSphere, Nutanix AHV and Proxmox
+                  VE. PowerShell agents periodically collect compute, memory,
+                  disk, network and backup metadata, publishing interactive
+                  HTML5 dashboards on IIS with full SQL Server history tracking.
+                </p>
+                <ul class="card-features">
+                  <li data-i18n="proj.hyp.f1">Unified inventory across vSphere, Nutanix AHV and Proxmox VE</li>
+                  <li data-i18n="proj.hyp.f2">Project / cost center tracking via tags and categories</li>
+                  <li data-i18n="proj.hyp.f3">SQL Server history tracking with removed-VM search</li>
+                  <li data-i18n="proj.hyp.f4">Zombie VM, snapshot sprawl and backup compliance reports</li>
+                  <li data-i18n="proj.hyp.f5">Resource diff reports between any two dates</li>
+                  <li data-i18n="proj.hyp.f6">Automated IIS publishing with 7-Zip historical archival</li>
+                </ul>
+              </div>
+              <div class="project-col">
+                <h4 class="details-title" data-i18n="proj.details.title">Key details</h4>
+                <ul class="card-details">
+                  <li data-i18n="proj.hyp.d1">PowerShell 5.1/7.x, PowerCLI 12+ and Prism Central v3 REST</li>
+                  <li data-i18n="proj.hyp.d2">IIS 10+ hosting with Production and Development environments</li>
+                  <li data-i18n="proj.hyp.d3">High-reliability LastSeenOn engine, no vCenter log dependency</li>
+                  <li data-i18n="proj.hyp.d4">4-tier backup evaluation with custom retention thresholds</li>
+                  <li data-i18n="proj.hyp.d5">Live search, fast filters, column toggles and sorting in every view</li>
+                  <li data-i18n="proj.hyp.d6">Executive weekly, monthly and quarterly capacity dashboards</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT / PERSONAL AREA ============ -->
+    <section class="section section-alt" id="chi-sono">
+      <div class="container">
+        <div class="about-grid">
+          <div class="reveal">
+            <p class="section-tag" data-i18n="sec.about.tag">// about me</p>
+            <h2 class="section-title" data-i18n="sec.about.title">Beyond the projects</h2>
+            <p class="about-text" data-i18n-html="about.p1">
+              I'm a <strong>Senior System Engineer</strong> with more than
+              30 years in enterprise IT: Windows Server, VMware
+              virtualization, Citrix, Exchange clusters, cloud services and
+              project management.
+            </p>
+            <p class="about-text" data-i18n-html="about.p2">
+              My favourite job is taking a manual, repetitive process and
+              turning it into a tool that runs by itself — and documenting
+              it. My projects are born from real problems and designed to be
+              reused: you'll find them open source on GitHub.
+            </p>
+            <ul class="about-skills">
+              <li>SQL Server &amp; Always On</li>
+              <li>PKI / AD CS</li>
+              <li>PowerShell</li>
+              <li>.NET</li>
+              <li>IIS / Windows Server</li>
+              <li>SSL/TLS</li>
+            </ul>
+          </div>
+          <div class="socials reveal" id="contatti">
+            <h3 class="socials-title" data-i18n="about.socialTitle">Find me here</h3>
+            <ul class="social-list">
+              <li>
+                <a class="social" href="https://github.com/alessandrotanino-blip" target="_blank" rel="noopener">
+                  <span class="social-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+                  </span>
+                  <span class="social-body">
+                    <span class="social-name">GitHub</span>
+                    <span class="social-handle">@alessandrotanino-blip</span>
+                  </span>
+                  <span class="social-arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li>
+                <a class="social" href="https://www.linkedin.com/in/alessandro-tanino" target="_blank" rel="noopener">
+                  <span class="social-icon icon-blue" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56Z"/></svg>
+                  </span>
+                  <span class="social-body">
+                    <span class="social-name">LinkedIn</span>
+                    <span class="social-handle">/in/alessandro-tanino</span>
+                  </span>
+                  <span class="social-arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li>
+                <a class="social" id="youtube" href="https://youtube.com/@alextan75" target="_blank" rel="noopener">
+                  <span class="social-icon icon-red" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81ZM9.55 15.57V8.43L15.82 12Z"/></svg>
+                  </span>
+                  <span class="social-body">
+                    <span class="social-name">YouTube</span>
+                    <span class="social-handle">@alextan75</span>
+                  </span>
+                  <span class="social-arrow" aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Alessandro Tanino — <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p class="footer-mono">
+        <span class="mono-comment">//</span> <span data-i18n="footer.mono">Handcrafted with HTML, CSS and a pinch of PowerShell</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

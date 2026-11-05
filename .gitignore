@@ -1,0 +1,7 @@
+# Residui locali (cartelle temporanee — eliminabili a mano)
+.tmp/
+.pylibs/
+
+# OS
+.DS_Store
+Thumbs.db
