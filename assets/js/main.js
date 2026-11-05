@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "meta.desc":
       "Sito personale di Alessandro Tanino, Senior System Engineer. Portali self-service: provisioning SQL Server su Availability Groups (MSCS/Failover Cluster), web enrollment PKI con AD CS e ACME nativo (RFC 8555), scanner certificati SSL/TLS, portale reporting multi-hypervisor. PowerShell, IIS, automazione.",
     "crumb.home": "Home",
+    "gallery.title": "Screenshot",
     "crumb.projects": "Progetti",
     "crumb.back": "Torna a tutti i progetti",
     "read.more": "Dettagli completi",
@@ -311,6 +312,37 @@ document.addEventListener("DOMContentLoaded", () => {
         toggle.setAttribute("aria-expanded", "false");
       })
     );
+  }
+
+  /* ---------- Lightbox (galleria screenshot) ---------- */
+  const gallery = document.querySelector(".gallery");
+  if (gallery) {
+    const box = document.createElement("div");
+    box.className = "lightbox";
+    box.hidden = true;
+    box.innerHTML =
+      '<img alt="" aria-hidden="true" /><button class="lightbox-close" aria-label="Close">&times;</button>';
+    document.body.appendChild(box);
+    const lbImg = box.querySelector("img");
+
+    const closeLightbox = () => {
+      box.hidden = true;
+      lbImg.alt = "";
+      lbImg.src = "";
+    };
+    box.addEventListener("click", (e) => {
+      if (e.target === box || e.target.closest(".lightbox-close")) closeLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !box.hidden) closeLightbox();
+    });
+    gallery.querySelectorAll("img").forEach((img) => {
+      img.addEventListener("click", () => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        box.hidden = false;
+      });
+    });
   }
 
   /* ---------- Reveal on scroll ---------- */
