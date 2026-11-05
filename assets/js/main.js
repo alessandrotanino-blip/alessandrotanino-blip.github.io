@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "crumb.back": "Torna a tutti i progetti",
     "read.more": "Dettagli completi",
     "related.title": "Altri progetti",
-    "page.pki.title": "PKI Web Enrollment Portal — AD CS, Web Enrollment, ACME (RFC 8555) | Alessandro Tanino",
+    "page.pki.title": "PKI Web Enrollment Portal with ACME Gateway — AD CS, Web Enrollment, ACME (RFC 8555) | Alessandro Tanino",
     "page.pki.desc":
       "Portale web per l'emissione certificati enterprise PKI (ASP.NET Core 8) che sostituisce il Web Enrollment Microsoft (certsrv/ActiveX): generazione chiavi client-side, custodia cifrata delle chiavi, RBAC sui template, workflow di approvazione e server ACME (RFC 8555) nativo per l'emissione automatica di certificati con AD CS.",
     "page.ssl.title": "SSL/TLS Certificate Scanner — Audit di rete PowerShell | Alessandro Tanino",
