@@ -9,7 +9,11 @@ i social e il canale YouTube. Pronto per **GitHub Pages**.
 ├── index.html            # pagina unica (hero, progetti, area personale)
 ├── assets/
 │   ├── css/styles.css    # stile dark/tech
-│   └── js/main.js        # i18n, like, typing, menu mobile, reveal on scroll
+│   ├── js/main.js        # i18n, tab, like, typing, menu mobile, reveal on scroll
+│   └── og-image.png      # immagine Open Graph per le condivisioni
+├── projects/             # una pagina dedicata per ogni progetto (SEO)
+├── robots.txt            # per i crawler
+├── sitemap.xml           # sitemap per i motori di ricerca
 ├── hypervisorPortal/     # README del progetto HyperVisor Portal
 ├── pki/                  # README del progetto PKI Web Enrollment Portal
 ├── sql/                  # README del progetto SQL Server Provisioning Portal
@@ -20,12 +24,11 @@ i social e il canale YouTube. Pronto per **GitHub Pages**.
 
 1. Crea un repository pubblico con nome `alessandrotanino-blip.github.io`
    (oppure un repository nuovo che poi punti su GitHub Pages).
-2. Copia i file del sito (`index.html`, `assets/`, `docs/`) alla root
-   del repository:
+2. Copia i file del sito alla root del repository:
 
    ```powershell
    git init
-   git add index.html assets README.md
+   git add index.html assets projects robots.txt sitemap.xml README.md
    git commit -m "Initial website"
    git branch -M main
    git remote add origin https://github.com/alessandrotanino-blip/alessandrotanino-blip.github.io.git

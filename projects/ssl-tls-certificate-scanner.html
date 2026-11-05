@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="page.ssl.title">SSL/TLS Certificate Scanner — PowerShell Network Audit | Alessandro Tanino</title>
+  <meta name="description" data-i18n="page.ssl.desc" content="PowerShell SSL/TLS certificate scanner for IT infrastructure: single host, bulk file and CIDR network range scans with HTTPS and LDAPS support, OS fingerprinting, reverse DNS, expiration filtering, CSV export and automated email reports." />
+  <meta name="keywords" content="SSL scanner, TLS certificate scanner, PowerShell, certificate audit, network scan, LDAPS, expiration monitoring, reverse DNS, CSV report" />
+  <link rel="canonical" href="https://alessandrotanino-blip.github.io/projects/ssl-tls-certificate-scanner.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Alessandro Tanino" />
+  <meta property="og:title" content="SSL/TLS Certificate Scanner — PowerShell" />
+  <meta property="og:description" content="Single host, bulk file and CIDR range scans with HTTPS/LDAPS support, OS fingerprinting, expiration filtering and automated reports." />
+  <meta property="og:url" content="https://alessandrotanino-blip.github.io/projects/ssl-tls-certificate-scanner.html" />
+  <meta property="og:image" content="../assets/og-image.png" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e17'/%3E%3Cpath d='M20 18v28M20 18h14a10 10 0 0 1 0 20H20' stroke='%2322d3ee' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='46' cy='46' r='5' fill='%238b5cf6'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SSL/TLS Certificate Scanner",
+    "description": "Comprehensive PowerShell scanner for SSL/TLS certificate details across websites, IP addresses and network ranges. Collects expiration dates, issuer and subject information with HTTPS and LDAPS support, OS detection, reverse DNS lookup, expiration filtering, CSV export and automated email reporting.",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Windows",
+    "url": "https://alessandrotanino-blip.github.io/projects/ssl-tls-certificate-scanner.html",
+    "author": { "@type": "Person", "name": "Alessandro Tanino", "url": "https://github.com/alessandrotanino-blip" },
+    "sameAs": ["https://github.com/alessandrotanino-blip/CertificateScanner"],
+    "featureList": [
+      "Single site, bulk file and CIDR network range scans",
+      "HTTPS and LDAPS protocol support",
+      "OS fingerprinting and reverse DNS lookup",
+      "Expiration filtering for at-risk certificates",
+      "Multithreaded parallel processing",
+      "CSV export and automated email reports"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="brand">
+        <span class="brand-mark">&lt;AT /&gt;</span>
+        <span class="brand-name">Alessandro&nbsp;Tanino</span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="../index.html" data-i18n="crumb.home">Home</a>
+        <a href="../index.html#progetti" data-i18n="nav.projects">Projects</a>
+        <a href="../index.html#chi-sono" data-i18n="nav.about">About</a>
+        <a href="../index.html#youtube">YouTube</a>
+        <a href="../index.html#contatti" class="nav-cta" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <button id="langToggle" class="lang-toggle" aria-label="Switch language" title="Cambia lingua / Switch language">—</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: 48px;">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html" data-i18n="crumb.home">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../index.html#progetti" data-i18n="crumb.projects">Projects</a>
+          <span aria-hidden="true">/</span>
+          <span class="crumb-current">SSL/TLS Certificate Scanner</span>
+        </nav>
+
+        <article class="project-panel active">
+          <div class="project-head">
+            <div class="card-icon icon-green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5Zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14Z"/></svg>
+            </div>
+            <div class="project-head-text">
+              <h1 class="card-title">SSL/TLS Certificate Scanner</h1>
+              <div class="card-tags">
+                <span class="tag">PowerShell</span>
+                <span class="tag">SSL / TLS</span>
+                <span class="tag">LDAPS</span>
+                <span class="tag">Network Audit</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a class="card-link" href="https://github.com/alessandrotanino-blip/CertificateScanner" target="_blank" rel="noopener">
+                <span data-i18n="proj.githubLink">Code on GitHub</span> <span aria-hidden="true">↗</span>
+              </a>
+              <button class="like-btn" data-project="ssl" aria-label="Like this project" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <span class="like-count">0</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-col">
+              <p class="card-desc" data-i18n-html="proj.ssl.desc">
+                <strong>PowerShell</strong> scanner for SSL/TLS certificate
+                auditing across single hosts, file-based lists, or entire CIDR
+                network ranges. Multi-threaded scanning with HTTPS and LDAPS
+                support, OS fingerprinting, reverse DNS, expiration filtering
+                and automated reports.
+              </p>
+              <ul class="card-features">
+                <li data-i18n="proj.ssl.f1">Single site, bulk file and CIDR network range scans</li>
+                <li data-i18n="proj.ssl.f2">HTTPS and LDAPS protocol support</li>
+                <li data-i18n="proj.ssl.f3">OS fingerprinting and reverse DNS lookup</li>
+                <li data-i18n="proj.ssl.f4">Expiration filtering for at-risk certificates</li>
+                <li data-i18n="proj.ssl.f5">Multithreaded parallel processing</li>
+                <li data-i18n="proj.ssl.f6">CSV export and automated email reports</li>
+              </ul>
+            </div>
+            <div class="project-col">
+              <h4 class="details-title" data-i18n="proj.details.title">Key details</h4>
+              <ul class="card-details">
+                <li data-i18n="proj.ssl.d1">Windows PowerShell 5.1 or PowerShell 7+</li>
+                <li data-i18n="proj.ssl.d2">Custom ports and legacy SSL protocol versions</li>
+                <li data-i18n="proj.ssl.d3">Per-scan tuning: thread count and timeouts</li>
+                <li data-i18n="proj.ssl.d4">Built-in -Help and -Examples documentation</li>
+                <li data-i18n="proj.ssl.d5">Append mode for incremental CSV exports</li>
+                <li data-i18n="proj.ssl.d6">Custom DNS servers for reverse lookups</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-foot">
+            <a class="card-link" href="../index.html#progetti" data-i18n="crumb.back">Back to all projects</a>
+          </div>
+        </article>
+
+        <div class="related">
+          <h3 data-i18n="related.title">Other projects</h3>
+          <div class="related-links">
+            <a href="pki-web-enrollment-portal.html">PKI Web Enrollment Portal</a>
+            <a href="sql-server-provisioning-portal.html">SQL Server Provisioning Portal</a>
+            <a href="hypervisor-portal.html">HyperVisor Portal</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Alessandro Tanino — <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p class="footer-mono">
+        <span class="mono-comment">//</span> <span data-i18n="footer.mono">Handcrafted with HTML, CSS and a pinch of PowerShell</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

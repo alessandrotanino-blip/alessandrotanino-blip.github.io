@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="page.hyp.title">HyperVisor Portal — Multi-Hypervisor Inventory & Reporting (vSphere, Nutanix, Proxmox) | Alessandro Tanino</title>
+  <meta name="description" data-i18n="page.hyp.desc" content="Enterprise multi-hypervisor inventory and reporting platform for VMware vSphere, Nutanix AHV and Proxmox VE: unified dashboards on IIS, project / cost center tracking, SQL Server history, zombie VM, snapshot sprawl and backup compliance reports." />
+  <meta name="keywords" content="multi-hypervisor, vSphere, VMware, Nutanix, AHV, Proxmox VE, VM inventory, reporting portal, PowerCLI, Prism Central, zombie VM, backup compliance, cost center" />
+  <link rel="canonical" href="https://alessandrotanino-blip.github.io/projects/hypervisor-portal.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Alessandro Tanino" />
+  <meta property="og:title" content="HyperVisor Portal — Multi-Hypervisor Inventory & Reporting" />
+  <meta property="og:description" content="Unified inventory and reporting across VMware vSphere, Nutanix AHV and Proxmox VE: dashboards on IIS, SQL Server history, zombie VM and backup compliance reports." />
+  <meta property="og:url" content="https://alessandrotanino-blip.github.io/projects/hypervisor-portal.html" />
+  <meta property="og:image" content="../assets/og-image.png" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e17'/%3E%3Cpath d='M20 18v28M20 18h14a10 10 0 0 1 0 20H20' stroke='%2322d3ee' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='46' cy='46' r='5' fill='%238b5cf6'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "HyperVisor Portal",
+    "alternateName": "Multi-Hypervisor Inventory & Reporting Portal",
+    "description": "Enterprise-grade automation, consolidation and reporting platform for hybrid virtualization environments running VMware vSphere, Nutanix AHV (Prism Central) and Proxmox VE. Periodically queries compute, memory, disk, network and backup metadata, compiles interactive HTML5 dashboards on Microsoft IIS, archives compressed datasets to network shares and tracks full VM history in SQL Server.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Windows Server 2016 - 2025",
+    "url": "https://alessandrotanino-blip.github.io/projects/hypervisor-portal.html",
+    "license": "https://opensource.org/licenses/MIT",
+    "author": { "@type": "Person", "name": "Alessandro Tanino", "url": "https://github.com/alessandrotanino-blip" },
+    "featureList": [
+      "Unified inventory across vSphere, Nutanix AHV and Proxmox VE",
+      "Project / cost center tracking via tags and categories",
+      "SQL Server history tracking with removed-VM search",
+      "Zombie VM, snapshot sprawl and backup compliance reports",
+      "Resource diff reports between any two dates",
+      "Automated IIS publishing with 7-Zip historical archival"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="../index.html" class="brand">
+        <span class="brand-mark">&lt;AT /&gt;</span>
+        <span class="brand-name">Alessandro&nbsp;Tanino</span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="../index.html" data-i18n="crumb.home">Home</a>
+        <a href="../index.html#progetti" data-i18n="nav.projects">Projects</a>
+        <a href="../index.html#chi-sono" data-i18n="nav.about">About</a>
+        <a href="../index.html#youtube">YouTube</a>
+        <a href="../index.html#contatti" class="nav-cta" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <button id="langToggle" class="lang-toggle" aria-label="Switch language" title="Cambia lingua / Switch language">—</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-top: 48px;">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html" data-i18n="crumb.home">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="../index.html#progetti" data-i18n="crumb.projects">Projects</a>
+          <span aria-hidden="true">/</span>
+          <span class="crumb-current">HyperVisor Portal</span>
+        </nav>
+
+        <article class="project-panel active">
+          <div class="project-head">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M4 4h7v7H4V4Zm9 0h7v7h-7V4ZM4 13h7v7H4v-7Zm9 0h7v7h-7v-7Z"/></svg>
+            </div>
+            <div class="project-head-text">
+              <h1 class="card-title">HyperVisor Portal</h1>
+              <div class="card-tags">
+                <span class="tag">PowerShell</span>
+                <span class="tag">VMware vSphere</span>
+                <span class="tag">Nutanix</span>
+                <span class="tag">Proxmox VE</span>
+                <span class="tag">IIS</span>
+                <span class="tag">SQL Server</span>
+              </div>
+            </div>
+            <div class="project-actions">
+              <button class="like-btn" data-project="hypervisor" aria-label="Like this project" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <span class="like-count">0</span>
+              </button>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-col">
+              <p class="card-desc" data-i18n-html="proj.hyp.desc">
+                Enterprise <strong>multi-hypervisor inventory &amp; reporting
+                platform</strong> for VMware vSphere, Nutanix AHV and Proxmox
+                VE. PowerShell agents periodically collect compute, memory,
+                disk, network and backup metadata, publishing interactive
+                HTML5 dashboards on IIS with full SQL Server history tracking.
+              </p>
+              <ul class="card-features">
+                <li data-i18n="proj.hyp.f1">Unified inventory across vSphere, Nutanix AHV and Proxmox VE</li>
+                <li data-i18n="proj.hyp.f2">Project / cost center tracking via tags and categories</li>
+                <li data-i18n="proj.hyp.f3">SQL Server history tracking with removed-VM search</li>
+                <li data-i18n="proj.hyp.f4">Zombie VM, snapshot sprawl and backup compliance reports</li>
+                <li data-i18n="proj.hyp.f5">Resource diff reports between any two dates</li>
+                <li data-i18n="proj.hyp.f6">Automated IIS publishing with 7-Zip historical archival</li>
+              </ul>
+            </div>
+            <div class="project-col">
+              <h4 class="details-title" data-i18n="proj.details.title">Key details</h4>
+              <ul class="card-details">
+                <li data-i18n="proj.hyp.d1">PowerShell 5.1/7.x, PowerCLI 12+ and Prism Central v3 REST</li>
+                <li data-i18n="proj.hyp.d2">IIS 10+ hosting with Production and Development environments</li>
+                <li data-i18n="proj.hyp.d3">High-reliability LastSeenOn engine, no vCenter log dependency</li>
+                <li data-i18n="proj.hyp.d4">4-tier backup evaluation with custom retention thresholds</li>
+                <li data-i18n="proj.hyp.d5">Live search, fast filters, column toggles and sorting in every view</li>
+                <li data-i18n="proj.hyp.d6">Executive weekly, monthly and quarterly capacity dashboards</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-foot">
+            <a class="card-link" href="../index.html#progetti" data-i18n="crumb.back">Back to all projects</a>
+          </div>
+        </article>
+
+        <div class="related">
+          <h3 data-i18n="related.title">Other projects</h3>
+          <div class="related-links">
+            <a href="pki-web-enrollment-portal.html">PKI Web Enrollment Portal</a>
+            <a href="ssl-tls-certificate-scanner.html">SSL/TLS Certificate Scanner</a>
+            <a href="sql-server-provisioning-portal.html">SQL Server Provisioning Portal</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Alessandro Tanino — <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p class="footer-mono">
+        <span class="mono-comment">//</span> <span data-i18n="footer.mono">Handcrafted with HTML, CSS and a pinch of PowerShell</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -3,8 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="meta.title">Alessandro Tanino — IT Infrastructure &amp; Automation</title>
-  <meta name="description" data-i18n="meta.desc" content="Personal website of Alessandro Tanino: IT projects, automation tools and YouTube channel. SQL Server, PKI, SSL/TLS." />
+  <title data-i18n="meta.title">Alessandro Tanino — IT Infrastructure Engineer | Self-Service Portals, SQL Server, PKI</title>
+  <meta name="description" data-i18n="meta.desc" content="Personal site of Alessandro Tanino, Senior System Engineer. Self-service provisioning portals: SQL Server Availability Groups on MSCS / Windows Server Failover Cluster, PKI web enrollment with AD CS and native ACME (RFC 8555), SSL/TLS certificate scanner, multi-hypervisor reporting portal. PowerShell, IIS, automation." />
+  <meta name="keywords" content="MSCS, Failover Cluster, SQL Server Availability Groups, self-service provisioning portal, PKI, web enrollment, AD CS, ACME, SSL/TLS certificate scanner, PowerShell, IIS, VMware, Nutanix, Proxmox" />
+  <link rel="canonical" href="https://alessandrotanino-blip.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Alessandro Tanino" />
+  <meta property="og:title" content="Alessandro Tanino — IT Infrastructure Engineer" />
+  <meta property="og:description" content="Self-service portals, SQL Server Always On, PKI web enrollment, SSL/TLS scanner, multi-hypervisor reporting." />
+  <meta property="og:url" content="https://alessandrotanino-blip.github.io/" />
+  <meta property="og:image" content="assets/og-image.png" />
+  <meta name="twitter:card" content="summary" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Alessandro Tanino",
+        "jobTitle": "Senior System Engineer",
+        "url": "https://alessandrotanino-blip.github.io/",
+        "sameAs": [
+          "https://github.com/alessandrotanino-blip",
+          "https://www.linkedin.com/in/alessandro-tanino",
+          "https://youtube.com/@alextan75"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "Alessandro Tanino",
+        "url": "https://alessandrotanino-blip.github.io/"
+      },
+      {
+        "@type": "ItemList",
+        "name": "IT Projects",
+        "itemListElement": [
+          { "@type": "SoftwareApplication", "name": "PKI Web Enrollment Portal", "url": "https://alessandrotanino-blip.github.io/projects/pki-web-enrollment-portal.html", "sameAs": ["https://github.com/alessandrotanino-blip/PKIWebPortal"] },
+          { "@type": "SoftwareApplication", "name": "SSL/TLS Certificate Scanner", "url": "https://alessandrotanino-blip.github.io/projects/ssl-tls-certificate-scanner.html", "sameAs": ["https://github.com/alessandrotanino-blip/CertificateScanner"] },
+          { "@type": "SoftwareApplication", "name": "SQL Server Provisioning Portal", "url": "https://alessandrotanino-blip.github.io/projects/sql-server-provisioning-portal.html" },
+          { "@type": "SoftwareApplication", "name": "HyperVisor Portal", "url": "https://alessandrotanino-blip.github.io/projects/hypervisor-portal.html" }
+        ]
+      }
+    ]
+  }
+  </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e17'/%3E%3Cpath d='M20 18v28M20 18h14a10 10 0 0 1 0 20H20' stroke='%2322d3ee' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='46' cy='46' r='5' fill='%238b5cf6'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -89,6 +131,24 @@
             automation, security and self-service.
           </p>
         </div>
+        <div class="topics reveal" aria-label="Topics">
+          <span class="topic">MSCS / Failover Cluster</span>
+          <span class="topic">Always On Availability Groups</span>
+          <span class="topic">Self-Service Provisioning Portal</span>
+          <span class="topic">PKI</span>
+          <span class="topic">Web Enrollment</span>
+          <span class="topic">AD CS</span>
+          <span class="topic">ACME / RFC 8555</span>
+          <span class="topic">SSL / TLS</span>
+          <span class="topic">Certificate Scanner</span>
+          <span class="topic">PowerShell</span>
+          <span class="topic">IIS</span>
+          <span class="topic">SQL Server 2022</span>
+          <span class="topic">VMware vSphere</span>
+          <span class="topic">Nutanix</span>
+          <span class="topic">Proxmox VE</span>
+          <span class="topic">Virtualization</span>
+        </div>
 
         <div class="project-tabs" role="tablist" aria-label="Projects">
           <button class="project-tab" id="tab-pki" data-tab="pki" role="tab" aria-selected="true" aria-controls="panel-pki">PKI Portal</button>
@@ -115,6 +175,9 @@
                 </div>
               </div>
               <div class="project-actions">
+                <a class="card-link" href="projects/sql-server-provisioning-portal.html">
+                  <span data-i18n="read.more">Full details</span> <span aria-hidden="true">→</span>
+                </a>
                 <button class="like-btn" data-project="sql" aria-label="Like this project" aria-pressed="false">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                   <span class="like-count">0</span>
@@ -126,7 +189,8 @@
                 <p class="card-desc" data-i18n-html="proj.sql.desc">
                   Enterprise self-service portal and orchestration engine for
                   automatic database provisioning on
-                  <strong>SQL Server 2022 Contained Availability Groups</strong>.
+                  <strong>SQL Server 2022 Contained Availability Groups</strong>
+                  over a Windows Server Failover Cluster (MSCS) environment.
                   Users submit requests through a web portal on IIS, DBAs
                   approve them with Windows SSO and a PowerShell engine runs
                   the whole workflow end-to-end — creation/restore, backup, AG
@@ -171,6 +235,9 @@
                 </div>
               </div>
               <div class="project-actions">
+                <a class="card-link" href="projects/pki-web-enrollment-portal.html">
+                  <span data-i18n="read.more">Full details</span> <span aria-hidden="true">→</span>
+                </a>
                 <a class="card-link" href="https://github.com/alessandrotanino-blip/PKIWebPortal" target="_blank" rel="noopener">
                   <span data-i18n="proj.githubLink">Code on GitHub</span> <span aria-hidden="true">↗</span>
                 </a>
@@ -229,6 +296,9 @@
                 </div>
               </div>
               <div class="project-actions">
+                <a class="card-link" href="projects/ssl-tls-certificate-scanner.html">
+                  <span data-i18n="read.more">Full details</span> <span aria-hidden="true">→</span>
+                </a>
                 <a class="card-link" href="https://github.com/alessandrotanino-blip/CertificateScanner" target="_blank" rel="noopener">
                   <span data-i18n="proj.githubLink">Code on GitHub</span> <span aria-hidden="true">↗</span>
                 </a>
@@ -288,6 +358,9 @@
                 </div>
               </div>
               <div class="project-actions">
+                <a class="card-link" href="projects/hypervisor-portal.html">
+                  <span data-i18n="read.more">Full details</span> <span aria-hidden="true">→</span>
+                </a>
                 <button class="like-btn" data-project="hypervisor" aria-label="Like this project" aria-pressed="false">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                   <span class="like-count">0</span>

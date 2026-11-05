@@ -531,6 +531,77 @@ body {
   gap: 10px;
 }
 
+/* ---------- Breadcrumb (pagine progetto) ---------- */
+.breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-faint);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.breadcrumb a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover { color: var(--accent); }
+
+.crumb-current { color: var(--text); font-weight: 500; }
+
+/* ---------- Righe keyword (home) ---------- */
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: -28px 0 40px;
+}
+
+.topic {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  border: 1px dashed var(--border);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+/* ---------- Altri progetti (pagine progetto) ---------- */
+.related { margin-top: 34px; }
+
+.related h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--text-dim);
+}
+
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.related-links a {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  padding: 9px 16px;
+  border-radius: 999px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.related-links a:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(34, 211, 238, 0.18);
+}
+
 .card-link {
   font-size: 0.88rem;
   font-weight: 600;

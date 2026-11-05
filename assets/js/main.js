@@ -5,9 +5,26 @@
 document.addEventListener("DOMContentLoaded", () => {
   /* ---------- i18n: EN di default, IT dal browser o dal selettore ---------- */
   const IT = {
-    "meta.title": "Alessandro Tanino — IT Infrastructure & Automation",
+    "meta.title": "Alessandro Tanino — IT Infrastructure Engineer | Self-Service Portals, SQL Server, PKI",
     "meta.desc":
-      "Sito personale di Alessandro Tanino: progetti IT, strumenti di automazione e canale YouTube. SQL Server, PKI, SSL/TLS.",
+      "Sito personale di Alessandro Tanino, Senior System Engineer. Portali self-service: provisioning SQL Server su Availability Groups (MSCS/Failover Cluster), web enrollment PKI con AD CS e ACME nativo (RFC 8555), scanner certificati SSL/TLS, portale reporting multi-hypervisor. PowerShell, IIS, automazione.",
+    "crumb.home": "Home",
+    "crumb.projects": "Progetti",
+    "crumb.back": "Torna a tutti i progetti",
+    "read.more": "Dettagli completi",
+    "related.title": "Altri progetti",
+    "page.pki.title": "PKI Web Enrollment Portal — AD CS, Web Enrollment, ACME (RFC 8555) | Alessandro Tanino",
+    "page.pki.desc":
+      "Portale web per l'emissione certificati enterprise PKI (ASP.NET Core 8) che sostituisce il Web Enrollment Microsoft (certsrv/ActiveX): generazione chiavi client-side, custodia cifrata delle chiavi, RBAC sui template, workflow di approvazione e server ACME (RFC 8555) nativo per l'emissione automatica di certificati con AD CS.",
+    "page.ssl.title": "SSL/TLS Certificate Scanner — Audit di rete PowerShell | Alessandro Tanino",
+    "page.ssl.desc":
+      "Scanner PowerShell per certificati SSL/TLS su infrastruttura IT: scan su singolo host, file di lista e range di rete CIDR con supporto HTTPS e LDAPS, fingerprinting OS, reverse DNS, filtri per scadenza, esportazione CSV e report automatici via email.",
+    "page.sql.title": "SQL Server Provisioning Portal — Self-Service, Availability Groups, MSCS | Alessandro Tanino",
+    "page.sql.desc":
+      "In arrivo: portale self-service e motore di orchestrazione PowerShell per SQL Server 2022 Contained Availability Groups su MSCS / Windows Server Failover Cluster. Approvazione DBA con Windows SSO, creazione/restore automatici, backup, join all'AG e sicurezza.",
+    "page.hyp.title": "HyperVisor Portal — Multi-Hypervisor Inventory & Reporting (vSphere, Nutanix, Proxmox) | Alessandro Tanino",
+    "page.hyp.desc":
+      "Piattaforma enterprise di inventario e reporting multi-hypervisor per VMware vSphere, Nutanix AHV e Proxmox VE: dashboard unificate su IIS, tracciamento progetti/centri di costo, storico SQL Server, report zombie VM, snapshot sprawl e compliance backup.",
     "nav.projects": "Progetti",
     "nav.about": "Chi sono",
     "nav.contact": "Contattami",
@@ -20,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "sec.projects.sub":
       "Strumenti e portali nati da problemi reali in ambienti enterprise: automazione, sicurezza e self-service.",
     "proj.sql.desc":
-      "Portale enterprise self-service per l'erogazione automatica di database su <strong>SQL Server 2022 Contained Availability Groups</strong>. Gli utenti inoltrano richieste da un portale web IIS, i DBA le approvano con SSO Windows e un motore PowerShell esegue end-to-end creazione/restore, backup, join all'AG e sicurezza — senza interventi manuali.",
+      "Portale enterprise self-service e motore di orchestrazione per l'erogazione automatica di database su <strong>SQL Server 2022 Contained Availability Groups</strong> in ambiente Windows Server Failover Cluster (MSCS). Gli utenti inoltrano richieste da un portale web IIS, i DBA le approvano con SSO Windows e un motore PowerShell esegue end-to-end creazione/restore, backup, join all'AG e sicurezza — senza interventi manuali.",
     "proj.sql.badge": "IN ARRIVO",
     "proj.sql.f1": "Richieste self-service: nuovo database o restore da .bak",
     "proj.sql.f2": "Dashboard di approvazione DBA con Windows SSO e verifica gruppi AD",
